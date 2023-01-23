@@ -27,4 +27,9 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('/event/create', App\Http\Livewire\EventAdd::class)->name('event-add');
+    Route::get('/events', App\Http\Livewire\EventList::class)->name('event-list');
+    Route::get('/event/{event}/edit', App\Http\Livewire\EventEdit::class)->name('event-edit');
+
+    Route::get('/participants/{event}', App\Http\Livewire\ParticipantList::class)->name('participant-list');
+    Route::get('/participant/{participant}/edit', App\Http\Livewire\ParticipantEdit::class)->name('participant-edit');
 });

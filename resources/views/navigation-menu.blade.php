@@ -19,7 +19,10 @@
                     <x-jet-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')" >
                         {{ __('Home') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('event-add') }}" :active="request()->routeIs('event-add')" >
+                    <x-jet-nav-link href="{{ route('event-list') }}" :active="request()->routeIs('event-list')" >
+                        {{ __('Event List') }}
+                    </x-jet-nav-link>
+                     <x-jet-nav-link href="{{ route('event-add') }}" :active="request()->routeIs('event-add')" >
                         {{ __('Create Event') }}
                     </x-jet-nav-link>
                 </div>
@@ -146,6 +149,9 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-jet-responsive-nav-link>
+             <x-jet-responsive-nav-link href="{{ route('event-list') }}" :active="request()->routeIs('event-list')">
+                {{ __('Event List') }}
             </x-jet-responsive-nav-link>
              <x-jet-responsive-nav-link href="{{ route('event-add') }}" :active="request()->routeIs('event-add')">
                 {{ __('Create Event') }}

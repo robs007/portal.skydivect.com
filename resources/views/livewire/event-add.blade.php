@@ -1,6 +1,6 @@
 <div wire:loading.delay.class="opacity-50">
     <x-notify/>
-    <x-layout.subpage header="Aircraft" subheader="Add Event">
+    <x-layout.subpage header="Events" subheader="Add Event">
         <form wire:submit.prevent="save" class="space-y-8 divide-y divide-gray-200" method="POST">
             <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
                 <x-group for="title" label="Event Title" class="col-span-4" :error="$errors->first('event.title')">
@@ -13,14 +13,21 @@
                     <x-date wire:model="event.start_date" id="start_date" :error="$errors->first('event.start_date')" field="event.start_date" />
                 </x-group>
                 <x-group for="start_time" label="Start Time" class="col-span-4" :error="$errors->first('event.start_time')">
-                    <x-selectbox wire:model="event.start_time" id="start_time" :error="$errors->first('event.start_time')" >
-                        <option value="">Start Time</option>
-                        <option value="7:00 am">7:00 am</option>
-                        <option value="8:00 am">8:00 am</option>
-                        <option value="9:00 am">9:00 am</option>
-                        <option value="10:00 am">10:00 am</option>
-                        <option value="11:00 am">11:00 am</option>
-                    </x-selectbox>
+{{--                    <x-selectbox wire:model="event.start_time" id="start_time" :error="$errors->first('event.start_time')" >--}}
+{{--                        <option value="">Start Time</option>--}}
+{{--                        <option value="7:00 am">7:00 am</option>--}}
+{{--                        <option value="8:00 am">8:00 am</option>--}}
+{{--                        <option value="9:00 am">9:00 am</option>--}}
+{{--                        <option value="10:00 am">10:00 am</option>--}}
+{{--                        <option value="11:00 am">11:00 am</option>--}}
+{{--                    </x-selectbox>--}}
+
+                    <x-time-picker
+                        label=""
+                        placeholder="8:00 AM"
+                        interval="30"
+                        wire:model.defer="event.start_time"
+                    />
                 </x-group>
 
                <x-group for="end_date" label="End Date" class="col-span-4" :error="$errors->first('event.end_date')">
@@ -47,7 +54,7 @@
                 <x-group for="contact_phone" label="Contact phone" class="col-span-4" :error="$errors->first('event.contact_phone')">
                     <x-text  wire:model.defer="event.contact_phone" id="contact_phone"  :error="$errors->first('event.contact_phone')" />
                 </x-group>
-
+            <input type="hidden" wire:model="event.user_id">
             </div>
             <div class="pt-5">
                 <div class="flex justify-end">

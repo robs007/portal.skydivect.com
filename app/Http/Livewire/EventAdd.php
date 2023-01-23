@@ -16,13 +16,14 @@ class EventAdd extends Component
         'event.start_time' => 'required',
         'event.title' => 'required',
         'event.detail' => 'required',
-        'event.cost' => 'decimal:2',
-        'event.max'=> 'numeric',
+        'event.cost' => 'nullable|decimal:2',
+        'event.max'=> 'nullable|numeric',
         'event.cost_detail' => 'sometimes',
         'event.has_registration' => 'sometimes',
         'event.contact_name'=> 'sometimes',
         'event.contact_email'=> 'sometimes|email',
-        'event.contact_phone'=> 'sometimes'
+        'event.contact_phone'=> 'sometimes',
+        'event.user_id'=> 'required'
 
     ];
 
@@ -33,11 +34,7 @@ class EventAdd extends Component
 
     public function mount()
     {
-        $this->event = Event::make(['start_date'=> Carbon::now()->format('m/d/Y'),
-            'end_date'=> Carbon::now()->format('m/d/Y'),
-            'display'=> 1,
-            'current'=> 0,
-            'user_id'=> \Auth::id()]);
+        $this->createblankEvent();
     }
 
     public function save()
@@ -46,7 +43,19 @@ class EventAdd extends Component
 
         $this->event->save();
 
-        $this->dispatchBrowserEvent('notify', 'Tach / Fuel Saved');
+        $this->dispatchBrowserEvent('notify', 'Event '.$this->event->title . ' Saved');
 
+        $this->createblankEvent();
+    }
+
+    public function createblankEvent()
+    {
+        $this->event = Event::make(['start_date'=> Carbon::now()->format('m/d/Y'),
+            'end_date'=> Carbon::now()->format('m/d/Y'),
+            'display'=> 1,
+            'current'=> 0,
+            'max' => 0 ,
+            'start_time' => '08:00',
+            'user_id'=> \Auth::id()]);
     }
 }
