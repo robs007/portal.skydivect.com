@@ -9,6 +9,8 @@ class Participant extends Model
 {
     use HasFactory;
 
+    public $guarded = [];
+
     public function event()
     {
         return $this->belongsTo(Event::class);

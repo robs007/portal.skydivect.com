@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +19,38 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('mail.upcoming-events');
 })->name('home');
+
+//Route::get('/email/verify', function () {
+//    return view('auth.verify-email');
+//})->middleware('auth')->name('verification.notice');
+//
+//
+//Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+//    $request->fulfill();
+//
+//    return redirect('/home');
+//})->middleware(['auth', 'signed'])->name('verification.verify');
+//
+//
+//Route::post('/email/verification-notification', function (Request $request) {
+//    $request->user()->sendEmailVerificationNotification();
+//
+//    return back()->with('message', 'Verification link sent!');
+//})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+Route::get('/mailable', function () {
+
+
+    return new App\Mail\SendEvents();
+});
+
+Route::get('/send', function () {
+
+
+    return new App\Mail\SendEvents();
+});
 
 Route::middleware([
     'auth:sanctum',
@@ -32,4 +67,5 @@ Route::middleware([
 
     Route::get('/participants/{event}', App\Http\Livewire\ParticipantList::class)->name('participant-list');
     Route::get('/participant/{participant}/edit', App\Http\Livewire\ParticipantEdit::class)->name('participant-edit');
+    Route::get('/participant/{event}/create', App\Http\Livewire\ParticipantAdd::class)->name('participant-add');
 });

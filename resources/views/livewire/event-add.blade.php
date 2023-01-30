@@ -68,6 +68,6 @@
             </div>
 
         </form>
-        @json($event)
+
     </x-layout.subpage>
 </div>
