@@ -32,7 +32,7 @@ class SendEvents extends Mailable
     {
         return new Envelope(
 
-            subject: 'Send Events',
+            subject: 'CPI Upcoming Events',
 
         );
     }
