@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/sites/portal.skydivect.com/
+    - export DEPLOYPATH=/home/skydivec/sites/portal.skydivect.com/
     - /bin/cp -R public $DEPLOYPATH
     - /bin/cp -R app $DEPLOYPATH
