@@ -2,6 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/skydivec/sites/portal.skydivect.com/
+    - /bin/cp artisan.php $DEPLOYPATH
     - /bin/cp -R public $DEPLOYPATH
     - /bin/cp -R app $DEPLOYPATH
     - /bin/cp -R bootstrap $DEPLOYPATH
@@ -11,7 +12,7 @@ deployment:
     - /bin/cp -R resources $DEPLOYPATH
     - /bin/cp -R routes $DEPLOYPATH
     - /bin/cp -R storage $DEPLOYPATH
-    - /bin/cp -R artisan.php $DEPLOYPATH
+    - /bin/cp artisan.php $DEPLOYPATH
     - /bin/cp composer.json $DEPLOYPATH
     - /bin/cp composer.lock $DEPLOYPATH
     - /bin/cp phpunit.xml $DEPLOYPATH
