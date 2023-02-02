@@ -36,6 +36,6 @@ class ParticipantList extends Component
 
     public function send()
     {
-        Mail::to('rszabo@crowleyauto.net')->send(new \App\Mail\SendEvents());
+        Mail::to(['rszabo@crowleyauto.net'])->send(new \App\Mail\SendEvents());
     }
 }

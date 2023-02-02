@@ -19,7 +19,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('mail.upcoming-events');
+    return view('auth.login');
 })->name('home');
 
 //Route::get('/email/verify', function () {
@@ -40,17 +40,6 @@ Route::get('/', function () {
 //    return back()->with('message', 'Verification link sent!');
 //})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
-Route::get('/mailable', function () {
-
-
-    return new App\Mail\SendEvents();
-});
-
-Route::get('/send', function () {
-
-
-    return new App\Mail\SendEvents();
-});
 
 Route::middleware([
     'auth:sanctum',

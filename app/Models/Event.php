@@ -15,6 +15,7 @@ class Event extends Model
     protected $guarded = [];
     protected $appends = ['title_ext'];
 
+
     protected function startDate(): Attribute
     {
         return Attribute::make(
@@ -27,6 +28,14 @@ class Event extends Model
         return Attribute::make(
             get: fn ($value) => Carbon::parse($value)->format('m/d/Y'),
             set: fn ($value) => Carbon::parse($value)->format('Y-m-d'),
+        );
+    }
+
+    protected function startTime(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => Carbon::parse($value)->format('g:i a'),
+            set: fn ($value) => Carbon::parse($value)->format('H:i:s'),
         );
     }
 

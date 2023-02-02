@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Event;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -13,6 +14,8 @@ class SendEvents extends Mailable
 {
     use Queueable, SerializesModels;
 
+   public $events;
+
     /**
      * Create a new message instance.
      *
@@ -20,7 +23,8 @@ class SendEvents extends Mailable
      */
     public function __construct()
     {
-        //
+        $this->events = Event::where('start_date','>=', '2023-01-01')->get();
+
     }
 
     /**

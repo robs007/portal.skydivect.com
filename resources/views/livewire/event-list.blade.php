@@ -153,7 +153,7 @@
                         </table>
                         <div class="mt-2 p-3">
                             {{$events->links()}}
-                            @json($filter)
+
                         </div>
                     </div>
                 </div>
