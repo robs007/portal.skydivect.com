@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" class="iframe js chrome webkit layout-large"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>Roundcube Webmail :: CPI Upcoming Events</title>
+    <style>html.layout-phone .popover:not(.select-menu), html.layout-small .popover:not(.select-menu){z-index:9999;}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0"><meta name="theme-color" content="#f4f4f4"><meta name="msapplication-navbutton-color" content="#f4f4f4">
+    <link rel="shortcut icon" href="skins/elastic/images/favicon.ico?s=1665002674">
+    <link rel="stylesheet" href="skins/elastic/deps/bootstrap.min.css?s=1665002674">
+
+    <link rel="stylesheet" href="skins/elastic/styles/styles.min.css?s=1665002674">
+
+
+
+    <script>
+        try {
+            if (document.cookie.indexOf('colorMode=dark') > -1
+                || (document.cookie.indexOf('colorMode=light') === -1 && window.matchMedia('(prefers-color-scheme: dark)').matches)
+            ) {
+                document.documentElement.className += ' dark-mode';
+            }
+        } catch (e) { }
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="plugins/return_to_webmail/skins/elastic/return_to_webmail.css?s=1666745737"><link rel="stylesheet" type="text/css" href="plugins/carddav/skins/elastic/carddav.css?s=1666745737"><link rel="stylesheet" type="text/css" href="plugins/jqueryui/themes/elastic/jquery-ui.min.css?s=1665002674"><link rel="stylesheet" type="text/css" href="plugins/calendar/skins/elastic/calendar.css?s=1666745737"><script src="program/js/jquery.min.js?s=1665002674"></script><script src="program/js/common.min.js?s=1665002674"></script><script src="program/js/app.min.js?s=1665002674"></script><script>
+    /*
+            @licstart  The following is the entire license notice for the
+            JavaScript code in this page.
+
+            Copyright (C) The Roundcube Dev Team
+
+            The JavaScript code in this page is free software: you can redistribute
+            it and/or modify it under the terms of the GNU General Public License
+            as published by the Free Software Foundation, either version 3 of
+            the License, or (at your option) any later version.
+
+            The code is distributed WITHOUT ANY WARRANTY; without even the implied
+            warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+            See the GNU GPL for more details.
+
+            @licend  The above is the entire license notice
+            for the JavaScript code in this page.
+    */
+    var rcmail = new rcube_webmail();
+    rcmail.set_env({"task":"mail","standard_windows":false,"locale":"en_US","devel_mode":null,"rcversion":10502,"cookie_domain":"","cookie_path":"/","cookie_secure":true,"dark_mode_support":true,"skin":"elastic","framed":true,"blankpage":"skins/elastic/watermark.html","refresh_interval":60,"session_lifetime":600,"action":"preview","comm_path":"./?_task=mail&_framed=1","user_id":"swkgwiSPA2TFEVCu","compose_extwin":false,"date_format":"yy-mm-dd","date_format_localized":"YYYY-MM-DD","calendar_settings":{"default_view":"agendaWeek","timeslots":2,"first_day":1,"first_hour":6,"work_start":6,"work_end":18,"agenda_range":60,"event_coloring":0,"time_indicator":1,"invite_shared":0,"itip_notify":3,"show_weekno":0,"default_calendar":null,"invitation_calendars":false},"libcal_settings":{"date_format":"YYYY-MM-DD","time_format":"HH:mm","date_short":"MMM-D","date_long":"MMMM D YYYY","date_agenda":"dddd MMM-DD","dates_long":"MMMM D YYYY","first_day":1,"timezone":0,"dst":"0","days":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"days_short":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"months_short":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"today":"Today"},"browser_capabilities":{"pdf":"1","flash":"0","tiff":"0","webp":"1","pgpmime":"0"},"uid":"110","safemode":true,"message_context":null,"message_flags":["seen"],"sender":"CPI Admin \u003Cadmin@mg.skydivect.com\u003E","mailbox":"INBOX","username":"rszabo@skydivect.com","permaurl":"./?_task=mail&_action=show&_uid=110&_mbox=INBOX","has_writeable_addressbook":true,"delimiter":".","mimetypes":["text/plain","text/html","image/jpeg","image/gif","image/png","image/bmp","image/webp","application/x-javascript","application/pdf","message/rfc822"],"read_when_deleted":true,"display_next":true,"drafts_mailbox":"INBOX.Drafts","trash_mailbox":"INBOX.Trash","junk_mailbox":"INBOX.spam","optional_format":"text","mailboxes":{"INBOX":{"id":"INBOX","name":"Inbox","virtual":false,"class":"inbox"},"INBOX.Drafts":{"id":"INBOX.Drafts","name":"Drafts","virtual":false,"class":"drafts"},"INBOX.Sent":{"id":"INBOX.Sent","name":"Sent","virtual":false,"class":"sent"},"INBOX.spam":{"id":"INBOX.spam","name":"Junk","virtual":false,"class":"junk"},"INBOX.Trash":{"id":"INBOX.Trash","name":"Trash","virtual":false,"class":"trash"},"INBOX.Archive":{"id":"INBOX.Archive","name":"Archive","virtual":false}},"mailboxes_list":["INBOX","INBOX.Drafts","INBOX.Sent","INBOX.spam","INBOX.Trash","INBOX.Archive"],"request_token":"y9NSg6CZtU3THPa4c8gtsRMigvB5B5BA"});
+    rcmail.add_label({"loading":"Loading...","servererror":"Server Error!","connerror":"Connection Error (Failed to reach the server)!","requesttimedout":"Request timed out","refreshing":"Refreshing...","windowopenerror":"The popup window was blocked!","uploadingmany":"Uploading files...","uploading":"Uploading file...","close":"Close","save":"Save","cancel":"Cancel","alerttitle":"Attention","confirmationtitle":"Are you sure...","delete":"Delete","continue":"Continue","ok":"OK","calendar.createfrommail":"Save as event","libcalendaring.itipaccepted":"Accept","libcalendaring.itiptentative":"Maybe","libcalendaring.itipdeclined":"Decline","libcalendaring.itipdelegated":"Delegate","libcalendaring.expandattendeegroup":"Substitute with group members","libcalendaring.expandattendeegroupnodata":"Unable to substitute this group. No members found.","libcalendaring.statusorganizer":"Organizer","libcalendaring.statusaccepted":"Accepted","libcalendaring.statusdeclined":"Declined","libcalendaring.statusdelegated":"Delegated","libcalendaring.statusunknown":"Unknown","libcalendaring.statusneeds-action":"Needs action","libcalendaring.statustentative":"Tentative","libcalendaring.statuscompleted":"Completed","libcalendaring.statusin-process":"In process","libcalendaring.delegatedto":"Delegated to:","libcalendaring.delegatedfrom":"Delegated from:","libcalendaring.showmore":"Show more...","checkingmail":"Checking for new messages...","deletemessage":"Delete message","movemessagetotrash":"Move message to trash","movingmessage":"Moving message(s)...","deletingmessage":"Deleting message(s)...","markingmessage":"Marking message(s)...","replyall":"Reply all","replylist":"Reply list","bounce":"Resend","bouncemsg":"Resend (bounce)","sendingmessage":"Sending message...","back":"Back","errortitle":"An error occurred!","options":"Options","plaintoggle":"Plain text","htmltoggle":"HTML","previous":"Previous","next":"Next","select":"Select","browse":"Browse","choosefile":"Choose file...","choosefiles":"Choose files...","purgefolderconfirm":"Do you really want to delete all messages in this folder?","deletemessagesconfirm":"Do you really want to delete selected message(s)?","details":"Details","summary":"Summary","arialabelmessageheaders":"Message headers"});
+    rcmail.gui_container("headerlinks","header-links");
+    rcmail.gui_container("attachmentmenu","attachmentmenu");
+    rcmail.gui_container("mailtomenu","mailto-menu");rcmail.register_button('cpanel', 'rcmbtnfrm100', 'link', '', 'button-cpwebmail button-selected', '');
+    rcmail.register_button('purge', 'rcmbtnfrm101', 'link', '', 'button-cptrashempty', '');
+    rcmail.register_button('calendar', 'rcmbtnfrm102', 'link', '', 'button-calendar button-selected', '');
+    rcmail.register_button('calendar-create-from-mail', 'rcmbtnfrm103', 'link', 'icon calendarlink active', '', '');
+    rcmail.register_button('extwin', 'rcmbtnfrm104', 'link', '', '', '');
+    rcmail.register_button('change-format', 'rcmbtnfrm105', 'link', '', '', '');
+    rcmail.gui_object('remoteobjectsmsg', 'remote-objects-message');
+    rcmail.gui_object('messagebody', 'messagebody');
+    rcmail.register_button('open-attachment', 'attachmenuopen', 'link', 'extwin active', '', '');
+    rcmail.register_button('download-attachment', 'attachmenudownload', 'link', 'download active', '', '');
+    rcmail.gui_object('message', 'messagestack');
+</script>
+
+    <script src="plugins/return_to_webmail/return_to_webmail.js?s=1666745737"></script><script src="plugins/jqueryui/js/jquery-ui.min.js?s=1664998150"></script><script src="plugins/calendar/calendar_base.js?s=1666745737"></script><script src="plugins/libcalendaring/libcalendaring.js?s=1666745737"></script>
+</head>
+<body class="task-mail action-preview" data-new-gr-c-s-check-loaded="14.1094.0" data-gr-ext-installed="">
+
+
+
+
+
+
+<h1 class="voice">Message preview</h1>
+
+<div id="layout-content" class="selected">
+
+    <div class="content frame-content" role="main">
+        <div id="message-header">
+            <h2 class="subject">
+                <span class="voice">Subject: </span>
+                CPI Upcoming Events
+
+                <a class="extwin hidden-small" title="Open in new window" data-hidden="small" id="rcmbtnfrm104" role="button" href="./?_task=mail&amp;_action=show&amp;_uid=110&amp;_mbox=INBOX" onclick="return rcmail.command('extwin','',this,event)" tabindex="0" aria-disabled="false"><span class="inner">Open in new window</span></a>
+
+            </h2>
+            <div class="header">
+                <img src="skins/elastic/images/contactpic.svg" alt="Contact photo" class="contactphoto" onerror="this.onerror = null; this.src = 'skins/elastic/images/contactpic.svg';">
+                <div class="header-content">
+                    <div class="header-summary"><span>From <span class="adr"><a href="mailto:admin@mg.skydivect.com" class="rcmContactAddress" onclick="return rcmail.command('compose','CPI Admin <admin@mg.skydivect.com>',this)" title="admin@mg.skydivect.com">CPI Admin</a><a href="#add" title="Add to address book" class="rcmaddcontact" onclick="return rcmail.command('add-contact','CPI Admin <admin@mg.skydivect.com>',this)"></a></span> on <span class="text-nowrap">2023-01-31 15:47</span></span></div>
+                    <table class="header-headers"><tbody><tr><td class="header-title">From</td><td class="header from"><span class="adr"><a href="mailto:admin@mg.skydivect.com" class="rcmContactAddress" onclick="return rcmail.command('compose','CPI Admin <admin@mg.skydivect.com>',this)" title="admin@mg.skydivect.com">CPI Admin</a><a href="#add" title="Add to address book" class="rcmaddcontact" onclick="return rcmail.command('add-contact','CPI Admin <admin@mg.skydivect.com>',this)"></a></span></td></tr><tr><td class="header-title">Sender</td><td class="header sender"><span class="adr"><a href="mailto:admin@mg.skydivect.com" class="rcmContactAddress" onclick="return rcmail.command('compose','admin@mg.skydivect.com',this)" title="admin@mg.skydivect.com">admin@mg.skydivect.com</a><a href="#add" title="Add to address book" class="rcmaddcontact" onclick="return rcmail.command('add-contact','admin@mg.skydivect.com',this)"></a></span></td></tr><tr><td class="header-title">To</td><td class="header to"><span class="adr"><a href="mailto:rszabo@crowleyauto.net" class="rcmContactAddress" onclick="return rcmail.command('compose','rszabo@crowleyauto.net',this)" title="rszabo@crowleyauto.net">rszabo@crowleyauto.net</a><a href="#add" title="Add to address book" class="rcmaddcontact" onclick="return rcmail.command('add-contact','rszabo@crowleyauto.net',this)"></a></span>, <span class="adr"><a href="mailto:rszabo@skydivect.com" class="rcmContactAddress" onclick="return rcmail.command('compose','rszabo@skydivect.com',this)" title="rszabo@skydivect.com">rszabo@skydivect.com</a><a href="#add" title="Add to address book" class="rcmaddcontact" onclick="return rcmail.command('add-contact','rszabo@skydivect.com',this)"></a></span></td></tr><tr><td class="header-title">Date</td><td class="header date">Today 15:47</td></tr></tbody></table>
+                    <div class="header-links">
+
+
+                        <a href="#headers" class="headers-details" onclick="return UI.headers_show(true)">Details</a>
+                        <a href="#all-headers" class="headers-all" onclick="return UI.headers_dialog()">Headers</a>
+
+
+                        <a class="plain" title="Display in plain text format" id="rcmbtnfrm105" role="button" href="#" onclick="return rcmail.command('change-format','text',this,event)" tabindex="0" aria-disabled="false"><span class="inner">Plain text</span></a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="message-content">
+            <div class="leftcol" role="region" aria-labelledby="aria-label-messageattachments">
+                <h2 id="aria-label-messageattachments" class="voice">Attachments</h2>
+
+            </div>
+            <div class="rightcol" role="region" aria-labelledby="aria-label-messagebody">
+                <h2 id="aria-label-messagebody" class="voice">Message Body</h2>
+                <div id="message-objects">
+                    <div id="remote-objects-message" class="ui alert alert-warning boxwarning" style="display: none"><i class="icon"></i><span>To protect your privacy remote resources have been blocked.</span>&nbsp;<span class="boxbuttons"><a href="#loadremote" onclick="rcmail.command('load-remote')" class="btn btn-primary btn-sm">Allow</a></span></div>
+                </div>
+                <div id="messagebody"><div class="message-htmlpart" id="message-htmlpart1"><!-- html ignored --><!-- head ignored --><!-- meta ignored -->
+
+
+                    <!-- meta ignored -->
+
+                    <!-- meta ignored -->
+                    <style type="text/css">@media only screen and (min-width: 620px){#message-htmlpart1 div.rcmBody .v1wrapper{ min-width: 600px !important; }#message-htmlpart1 div.rcmBody .v1wrapper h1{ }#message-htmlpart1 div.rcmBody .v1wrapper h1{ font-size: 30px !important; line-height: 38px !important; }#message-htmlpart1 div.rcmBody .v1wrapper h2{ }#message-htmlpart1 div.rcmBody .v1wrapper h2{ font-size: 20px !important; line-height: 28px !important; }#message-htmlpart1 div.rcmBody .v1wrapper h3{ }#message-htmlpart1 div.rcmBody .v1column{ }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-8{ font-size: 8px !important; line-height: 14px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-9{ font-size: 9px !important; line-height: 16px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-10{ font-size: 10px !important; line-height: 18px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-11{ font-size: 11px !important; line-height: 19px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-12{ font-size: 12px !important; line-height: 19px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-13{ font-size: 13px !important; line-height: 21px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-14{ font-size: 14px !important; line-height: 21px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-15{ font-size: 15px !important; line-height: 23px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-16{ font-size: 16px !important; line-height: 24px         !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-17{ font-size: 17px !important; line-height: 26px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-18{ font-size: 18px !important; line-height: 26px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-20{ font-size: 20px !important; line-height: 28px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-22{ font-size: 22px !important; line-height: 31px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-24{ font-size: 24px !important; line-height: 32px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-26{ font-size: 26px !important; line-height: 34px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-28{ font-size: 28px !important; line-height: 36px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-30{ font-size: 30px !important; line-height: 38px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-32{ font-size: 32px !important; line-height: 40px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-34{ font-size: 34px !important; line-height: 43px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-36{ font-size: 36px !important; line-height: 43px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-40{ font-size: 40px !important; line-height: 47px !important; }#message-htmlpart1 div.rcmBody .v1wrapper
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 #message-htmlpart1 div.rcmBody .v1size-44{ font-size: 44px !important; line-height: 50px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-48{ font-size: 48px !important; line-height: 54px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-56{ font-size: 56px !important; line-height: 60px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-64{ font-size: 64px !important; line-height: 68px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-72{ font-size: 72px !important; line-height: 76px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-80{ font-size: 80px !important; line-height: 84px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-96{ font-size: 96px !important; line-height: 100px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-112{ font-size: 112px !important; line-height: 116px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-128{ font-size: 128px !important; line-height: 132px !important; }#message-htmlpart1 div.rcmBody .v1wrapper .v1size-144{ font-size: 144px !important; line-height: 148px !important; }}</style>
+                    <!-- meta ignored -->
+                    <style type="text/css">#message-htmlpart1 div.rcmBody .v1main, #message-htmlpart1 div.rcmBody .v1mso { margin: 0; padding: 0; }
+                    #message-htmlpart1 div.rcmBody table { border-collapse: collapse; table-layout: fixed; }
+                    #message-htmlpart1 div.rcmBody * { line-height: inherit; }
+                    #message-htmlpart1 div.rcmBody [x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; }
+                    #message-htmlpart1 div.rcmBody .v1wrapper .v1footer__share-button a:hover,
+                    #message-htmlpart1 div.rcmBody .v1wrapper .v1footer__share-button a:focus { color: #ffffff !important; }
+                    #message-htmlpart1 div.rcmBody .v1wrapper .v1footer__share-button a.v1icon-white:hover,
+                    #message-htmlpart1 div.rcmBody .v1wrapper .v1footer__share-button a.v1icon-white:focus { color: #ffffff !important; }
+                    #message-htmlpart1 div.rcmBody .v1wrapper .v1footer__share-button a.v1icon-black:hover,
+                    #message-htmlpart1 div.rcmBody .v1wrapper .v1footer__share-button a.v1icon-black:focus { color: #000000 !important; }
+                    #message-htmlpart1 div.rcmBody .v1btn a:hover,
+                    #message-htmlpart1 div.rcmBody .v1btn a:focus,
+                    #message-htmlpart1 div.rcmBody .v1footer__share-button a:hover,
+                    #message-htmlpart1 div.rcmBody .v1footer__share-button a:focus,
+                    #message-htmlpart1 div.rcmBody .v1email-footer__links a:hover,
+                    #message-htmlpart1 div.rcmBody .v1email-footer__links a:focus { opacity: 0.8; }
+                    #message-htmlpart1 div.rcmBody .v1preheader,
+                    #message-htmlpart1 div.rcmBody .v1header,
+                    #message-htmlpart1 div.rcmBody .v1layout,
+                    #message-htmlpart1 div.rcmBody .v1column { transition: width 0.25s ease-in-out, max-width 0.25s ease-in-out; }
+                    #message-htmlpart1 div.rcmBody .v1preheader td { padding-bottom: 8px; }
+                    #message-htmlpart1 div.rcmBody .v1layout,
+                    #message-htmlpart1 div.rcmBody div.v1header { max-width: 400px !important; -fallback-width: 95% !important; width: calc(100% - 20px) !important; }
+                    #message-htmlpart1 div.rcmBody div.v1preheader { max-width: 360px !important; -fallback-width: 90% !important; width: calc(100% - 60px) !important; }
+                    #message-htmlpart1 div.rcmBody .v1snippet,
+                    #message-htmlpart1 div.rcmBody .v1webversion { float: none !important; }
+                    #message-htmlpart1 div.rcmBody .v1stack .v1column { max-width: 400px !important; width: 100% !important; }
+                    #message-htmlpart1 div.rcmBody .v1fixed-width.v1has-border { max-width: 402px !important; }
+                    #message-htmlpart1 div.rcmBody .v1fixed-width.v1has-border .v1layout__inner { box-sizing: border-box; }
+                    #message-htmlpart1 div.rcmBody .v1snippet,
+                    #message-htmlpart1 div.rcmBody .v1webversion { width: 50% !important; }
+                    #message-htmlpart1 div.rcmBody .v1ie .v1btn { width: 100%; }
+                    #message-htmlpart1 div.rcmBody .v1ie .v1stack .v1column,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1stack .v1gutter { display: table-cell; float: none !important; }
+                    #message-htmlpart1 div.rcmBody .v1ie div.v1preheader,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1email-footer { max-width: 560px !important; width: 560px !important; }
+                    #message-htmlpart1 div.rcmBody .v1ie .v1snippet,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1webversion { width: 280px !important; }
+                    #message-htmlpart1 div.rcmBody .v1ie div.v1header,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1layout { max-width: 600px !important; width: 600px !important; }
+                    #message-htmlpart1 div.rcmBody .v1ie .v1two-col .v1column { max-width: 300px !important; width: 300px !important; }
+                    #message-htmlpart1 div.rcmBody .v1ie .v1three-col .v1column,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1narrow { max-width: 200px !important; width: 200px !important; }
+                    #message-htmlpart1 div.rcmBody .v1ie .v1wide { width: 400px !important; }
+                    #message-htmlpart1 div.rcmBody .v1ie .v1stack.v1fixed-width.v1has-border,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1stack.v1has-gutter.v1has-border { max-width: 602px !important; width: 602px !important; }
+                    #message-htmlpart1 div.rcmBody .v1ie .v1stack.v1two-col.v1has-gutter .v1column { max-width: 290px !important; width: 290px !important; }
+                    #message-htmlpart1 div.rcmBody .v1ie .v1stack.v1three-col.v1has-gutter .v1column,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1stack.v1has-gutter .v1narrow { max-width: 188px !important; width: 188px !important; }
+                    #message-htmlpart1 div.rcmBody .v1ie .v1stack.v1has-gutter .v1wide { max-width: 394px !important; width: 394px !important; }
+                    #message-htmlpart1 div.rcmBody .v1ie .v1stack.v1two-col.v1has-gutter.v1has-border .v1column { max-width: 292px !important; width: 292px !important; }
+                    #message-htmlpart1 div.rcmBody .v1ie .v1stack.v1three-col.v1has-gutter.v1has-border .v1column,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1stack.v1has-gutter.v1has-border .v1narrow { max-width: 190px !important; width: 190px !important; }
+                    #message-htmlpart1 div.rcmBody .v1ie .v1stack.v1has-gutter.v1has-border .v1wide { max-width: 396px !important; width: 396px !important; }
+                    #message-htmlpart1 div.rcmBody .v1ie .v1fixed-width .v1layout__inner { border-left: 0 none white !important; border-right: 0 none white !important; }
+                    #message-htmlpart1 div.rcmBody .v1ie .v1layout__edges { display: none; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1layout__edges { font-size: 0; }
+                    #message-htmlpart1 div.rcmBody .v1layout-fixed-width,
+                    #message-htmlpart1 div.rcmBody .v1mso .v1layout-full-width { background-color: #ffffff; }
+                    @media only screen and (min-width: 620px) {
+                        #message-htmlpart1 div.rcmBody .v1column,
+                        #message-htmlpart1 div.rcmBody .v1gutter { display: table-cell; float: none !important; vertical-align: top; }
+                        #message-htmlpart1 div.rcmBody div.v1preheader,
+                        #message-htmlpart1 div.rcmBody .v1email-footer { max-width: 560px !important; width: 560px !important; }
+                        #message-htmlpart1 div.rcmBody .v1snippet,
+                        #message-htmlpart1 div.rcmBody .v1webversion { width: 280px !important; }
+                        #message-htmlpart1 div.rcmBody div.v1header,
+                        #message-htmlpart1 div.rcmBody .v1layout,
+                        #message-htmlpart1 div.rcmBody .v1one-col .v1column { max-width: 600px !important; width: 600px !important; }
+                        #message-htmlpart1 div.rcmBody .v1fixed-width.v1has-border,
+                        #message-htmlpart1 div.rcmBody .v1fixed-width.v1x_has-border,
+                        #message-htmlpart1 div.rcmBody .v1has-gutter.v1has-border,
+                        #message-htmlpart1 div.rcmBody .v1has-gutter.v1x_has-border { max-width: 602px !important; width: 602px !important; }
+                        #message-htmlpart1 div.rcmBody .v1two-col .v1column { max-width: 300px !important; width: 300px !important; }
+                        #message-htmlpart1 div.rcmBody .v1three-col .v1column,
+                        #message-htmlpart1 div.rcmBody .v1column.v1narrow,
+                        #message-htmlpart1 div.rcmBody .v1column.v1x_narrow { max-width: 200px !important; width: 200px !important; }
+                        #message-htmlpart1 div.rcmBody .v1column.v1wide,
+                        #message-htmlpart1 div.rcmBody .v1column.v1x_wide { width: 400px !important; }
+                        #message-htmlpart1 div.rcmBody .v1two-col.v1has-gutter .v1column,
+                        #message-htmlpart1 div.rcmBody .v1two-col.v1x_has-gutter .v1column { max-width: 290px !important; width: 290px !important; }
+                        #message-htmlpart1 div.rcmBody .v1three-col.v1has-gutter .v1column,
+                        #message-htmlpart1 div.rcmBody .v1three-col.v1x_has-gutter .v1column,
+                        #message-htmlpart1 div.rcmBody .v1has-gutter .v1narrow { max-width: 188px !important; width: 188px !important; }
+                        #message-htmlpart1 div.rcmBody .v1has-gutter .v1wide { max-width: 394px !important; width: 394px !important; }
+                        #message-htmlpart1 div.rcmBody .v1two-col.v1has-gutter.v1has-border .v1column,
+                        #message-htmlpart1 div.rcmBody .v1two-col.v1x_has-gutter.v1x_has-border .v1column { max-width: 292px !important; width: 292px !important; }
+                        #message-htmlpart1 div.rcmBody .v1three-col.v1has-gutter.v1has-border .v1column,
+                        #message-htmlpart1 div.rcmBody .v1three-col.v1x_has-gutter.v1x_has-border .v1column,
+                        #message-htmlpart1 div.rcmBody .v1has-gutter.v1has-border .v1narrow,
+                        #message-htmlpart1 div.rcmBody .v1has-gutter.v1x_has-border .v1narrow { max-width: 190px !important; width: 190px !important; }
+                        #message-htmlpart1 div.rcmBody .v1has-gutter.v1has-border .v1wide,
+                        #message-htmlpart1 div.rcmBody .v1has-gutter.v1x_has-border .v1wide { max-width: 396px !important; width: 396px !important; }
+                    }
+                    @supports (display: flex) {
+                        @media only screen and (min-width: 620px) { }
+                    }
+                    }
+
+                    @media(max-width: 619px) {
+                        #message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1left-aligned-footer .v1column,
+                        #message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1center-aligned-footer,
+                        #message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1right-aligned-footer .v1column { max-width: 100% !important; text-align: center !important; width: 100% !important; }
+                        #message-htmlpart1 div.rcmBody .v1flexible-footer-logo { margin-left: 0px !important; margin-right: 0px !important; }
+                        #message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1left-aligned-footer .v1flexible-footer__share-button__container,
+                        #message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1center-aligned-footer .v1flexible-footer__share-button__container,
+                        #message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1right-aligned-footer .v1flexible-footer__share-button__container { display: inline-block; margin-left: 5px !important; margin-right: 5px !important; }
+                        #message-htmlpart1 div.rcmBody .v1email-flexible-footer__additionalinfo--center { text-align: center !important; }
+
+                        #message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1left-aligned-footer table,
+                        #message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1center-aligned-footer table,
+                        #message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1right-aligned-footer table { display: table !important; width: 100% !important; }
+                        #message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1footer__share-button,
+                        #message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1email-footer__additional-info { margin-left: 20px; margin-right: 20px; }
+                    }
+                    @media only screen and (-webkit-min-device-pixel-ratio: 2), #message-htmlpart1 div.rcmBody only screen and (min--moz-device-pixel-ratio: 2), #message-htmlpart1 div.rcmBody only screen and (-o-min-device-pixel-ratio: 2/1), #message-htmlpart1 div.rcmBody only screen and (min-device-pixel-ratio: 2), #message-htmlpart1 div.rcmBody only screen and (min-resolution: 192dpi), #message-htmlpart1 div.rcmBody only screen and (min-resolution: 2dppx) {
+                        #message-htmlpart1 div.rcmBody .v1fblike { background-image: /* evil! */; }
+                        #message-htmlpart1 div.rcmBody .v1tweet { background-image: /* evil! */; }
+                        #message-htmlpart1 div.rcmBody .v1linkedinshare { background-image: /* evil! */; }
+                        #message-htmlpart1 div.rcmBody .v1forwardtoafriend { background-image: /* evil! */; }
+                    }
+                    @media (max-width: 321px) {
+                        #message-htmlpart1 div.rcmBody .v1fixed-width.v1has-border .v1layout__inner { border-width: 1px 0 !important; }
+                        #message-htmlpart1 div.rcmBody .v1layout,
+                        #message-htmlpart1 div.rcmBody .v1stack .v1column { min-width: 320px !important; width: 320px !important; }
+                        #message-htmlpart1 div.rcmBody .v1border { display: none; }
+                        #message-htmlpart1 div.rcmBody .v1has-gutter .v1border { display: table-cell; }
+                    }
+                    #message-htmlpart1 div.rcmBody .v1mso div { border: 0 none white !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1w560 .v1divider { margin-left: 260px !important; margin-right: 260px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1w360 .v1divider { margin-left: 160px !important; margin-right: 160px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1w260 .v1divider { margin-left: 110px !important; margin-right: 110px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1w160 .v1divider { margin-left: 60px !important; margin-right: 60px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1w354 .v1divider { margin-left: 157px !important; margin-right: 157px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1w250 .v1divider { margin-left: 105px !important; margin-right: 105px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1w148 .v1divider { margin-left: 54px !important; margin-right: 54px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-8,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-8 { font-size: 8px !important; line-height: 14px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-9,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-9 { font-size: 9px !important; line-height: 16px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-10,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-10 { font-size: 10px !important; line-height: 18px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-11,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-11 { font-size: 11px !important; line-height: 19px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-12,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-12 { font-size: 12px !important; line-height: 19px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-13,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-13 { font-size: 13px !important; line-height: 21px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-14,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-14 { font-size: 14px !important; line-height: 21px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-15,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-15 { font-size: 15px !important; line-height: 23px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-16,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-16 { font-size: 16px !important; line-height: 24px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-17,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-17 { font-size: 17px !important; line-height: 26px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-18,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-18 { font-size: 18px !important; line-height: 26px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-20,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-20 { font-size: 20px !important; line-height: 28px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-22,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-22 { font-size: 22px !important; line-height: 31px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-24,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-24 { font-size: 24px !important; line-height: 32px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-26,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-26 { font-size: 26px !important; line-height: 34px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-28,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-28 { font-size: 28px !important; line-height: 36px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-30,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-30 { font-size: 30px !important; line-height: 38px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-32,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-32 { font-size: 32px !important; line-height: 40px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-34,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-34 { font-size: 34px !important; line-height: 43px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-36,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-36 { font-size: 36px !important; line-height: 43px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-40,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-40 { font-size: 40px !important; line-height: 47px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-44,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-44 { font-size: 44px !important; line-height: 50px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-48,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-48 { font-size: 48px !important; line-height: 54px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-56,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-56 { font-size: 56px !important; line-height: 60px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-64,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-64 { font-size: 64px !important; line-height: 68px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-72,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-72 { font-size: 72px !important; line-height: 76px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-80,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-80 { font-size: 80px !important; line-height: 84px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-96,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-96 { font-size: 96px !important; line-height: 100px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-112,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-112 { font-size: 112px !important; line-height: 116px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-128,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-128 { font-size: 128px !important; line-height: 132px !important; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1size-144,
+                    #message-htmlpart1 div.rcmBody .v1ie .v1size-144 { font-size: 144px !important; line-height: 148px !important; }
+
+                    #message-htmlpart1 div.rcmBody .v1mso .v1cmctbl table td, #message-htmlpart1 div.rcmBody .v1mso .v1cmctbl table th { margin-left: 20px !important; margin-right: 20px !important; }
+                    #message-htmlpart1 div.rcmBody .v1cmctbl--inline table { border-collapse: collapse; }
+                    #message-htmlpart1 div.rcmBody .v1mso .v1cmctbl--inline table, #message-htmlpart1 div.rcmBody .v1mso .v1cmctbl table { mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-line-height-rule: exactly; }</style>
+
+
+                    <style type="text/css">#message-htmlpart1 div.rcmBody .v1main,#message-htmlpart1 div.rcmBody .v1mso{ background-color: #1e1e1e; }#message-htmlpart1 div.rcmBody .v1logo a:hover,#message-htmlpart1 div.rcmBody .v1logo a:focus{ color: #fff !important; }#message-htmlpart1 div.rcmBody .v1footer-logo a:hover,#message-htmlpart1 div.rcmBody .v1footer-logo a:focus{ color: #b59b69 !important; }#message-htmlpart1 div.rcmBody .v1mso .v1layout-has-border{ border-top: 1px solid #000; border-bottom: 1px solid #000; }#message-htmlpart1 div.rcmBody .v1mso .v1layout-has-bottom-border{ border-bottom: 1px solid #000; }#message-htmlpart1 div.rcmBody .v1mso .v1border,#message-htmlpart1 div.rcmBody .v1ie .v1border{ background-color: #000; }#message-htmlpart1 div.rcmBody .v1mso h1,#message-htmlpart1 div.rcmBody .v1ie h1{ }#message-htmlpart1 div.rcmBody .v1mso h1,#message-htmlpart1 div.rcmBody .v1ie h1{ font-size: 30px !important; line-height: 38px !important; }#message-htmlpart1 div.rcmBody .v1mso h2,#message-htmlpart1 div.rcmBody .v1ie h2{ }#message-htmlpart1 div.rcmBody .v1mso h2,#message-htmlpart1 div.rcmBody .v1ie h2{ font-size: 20px !important; line-height: 28px !important; }#message-htmlpart1 div.rcmBody .v1mso h3,#message-htmlpart1 div.rcmBody .v1ie h3{ }#message-htmlpart1 div.rcmBody .v1mso .v1layout__inner,#message-htmlpart1 div.rcmBody .v1ie .v1layout__inner{ }#message-htmlpart1 div.rcmBody .v1mso .v1footer__share-button p{ }#message-htmlpart1 div.rcmBody .v1mso .v1footer__share-button p{ font-family: Avenir,sans-serif; }</style>
+                    <!-- meta ignored -->
+                    <!-- meta ignored -->
+
+
+
+                    <div class="rcmBody" style="line-height: inherit; margin: 0px; padding: 0px; text-size-adjust: 100%; height: 564px; overflow-y: hidden">
+
+                        <table class="v1wrapper" style="line-height: inherit; border-collapse: collapse; table-layout: fixed; min-width: 320px; width: 100%; background-color: #1e1e1e" cellpadding="0" cellspacing="0">
+                            <tbody style="line-height: inherit">
+                            <tr style="line-height: inherit">
+                                <td style="line-height: inherit">
+                                    <div style="line-height: inherit">
+                                        <div class="v1preheader" style="line-height: inherit; transition: width 0.25s ease-in-out, max-width 0.25s ease-in-out; -fallback-width: 90% !important; margin: 0 auto; max-width: 560px; min-width: 280px; width: calc(28000% - 167440px)">
+                                            <div style="line-height: inherit; border-collapse: collapse; display: table; width: 100%">
+
+                                                <div class="v1snippet" style="display: table-cell; float: left; font-size: 12px; line-height: 19px; max-width: 280px; min-width: 140px; width: calc(14000% - 78120px); padding: 10px 0 5px 0; color: #e8e8e8; font-family: Avenir,sans-serif">
+
+                                                </div>
+
+                                                <div class="v1webversion" style="display: table-cell; float: left; font-size: 12px; line-height: 19px; max-width: 280px; min-width: 139px; width: calc(14100% - 78680px); padding: 10px 0 5px 0; text-align: right; color: #e8e8e8; font-family: Avenir,sans-serif">
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div style="line-height: inherit">
+                                        <div class="v1layout v1one-col v1fixed-width v1stack" style="line-height: inherit; transition: width 0.25s ease-in-out, max-width 0.25s ease-in-out; -fallback-width: 95% !important; margin: 0 auto; max-width: 600px; min-width: 320px; width: calc(28000% - 167400px); overflow-wrap: break-word; word-wrap: break-word; word-break: break-word">
+                                            <div class="v1layout__inner" style="line-height: inherit; border-collapse: collapse; display: table; width: 100%; background-color: #212a32">
+
+                                                <div class="v1column" style="transition: width 0.25s ease-in-out, max-width 0.25s ease-in-out; max-width: 400px !important; width: 100% !important; text-align: left; color: #fff; font-size: 16px; line-height: 24px; font-family: Roboto,Tahoma,sans-serif">
+
+                                                    <div style="line-height: inherit; margin-left: 20px; margin-right: 20px; margin-top: 12px">
+                                                        <div style="mso-line-height-rule: exactly; line-height: 10px; font-size: 1px">&nbsp;</div>
+                                                    </div>
+
+                                                    <div style="line-height: inherit; margin-left: 20px; margin-right: 20px">
+                                                        <div style="line-height: inherit; mso-line-height-rule: exactly; mso-text-raise: 11px; vertical-align: middle">
+                                                            <h3 style="margin-top: 0; margin-bottom: 0; font-style: normal; font-weight: normal; color: #707f8f; font-size: 16px; line-height: 24px; text-align: center">Save the date for our upcoming events</h3>
+                                                            <h1 style="margin-top: 12px; margin-bottom: 0; font-style: normal; font-weight: normal; color: #d49344; font-size: 26px; line-height: 34px; text-align: center">CPI Events</h1>
+                                                            <p style="line-height: inherit; margin-top: 20px; margin-bottom: 0"></p>
+                                                            <ul style="line-height: inherit; margin-top: 20px; margin-bottom: 20px; margin-left: 24px; padding: 0; list-style-type: disc">
+                                                                <li style="line-height: inherit; margin-top: 20px; margin-bottom: 0; margin-left: 0">02/05/2023 Dolor consequuntur vitae dolore. 08:00 0
+                                                                </li>
+
+                                                                <li style="line-height: inherit; margin-top: 20px; margin-bottom: 0; margin-left: 0">02/12/2023 Rem ipsam recusandae non qui. 08:00 0
+                                                                </li>
+
+                                                                <li style="line-height: inherit; margin-top: 20px; margin-bottom: 0; margin-left: 0">02/15/2023 Commodi ut est dolorum. 08:00 0
+                                                                </li>
+
+                                                                <li style="line-height: inherit; margin-top: 20px; margin-bottom: 0; margin-left: 0">02/18/2023 Adipisci ducimus qui. 08:00 0
+                                                                </li>
+
+                                                                <li style="line-height: inherit; margin-top: 20px; margin-bottom: 0; margin-left: 0">02/06/2023 Laborum quas totam dolores dolores veniam. 08:00 0
+                                                                </li>
+
+                                                                <li style="line-height: inherit; margin-top: 20px; margin-bottom: 0; margin-left: 0">02/18/2023 Voluptas nemo cum iure. 08:00 0
+                                                                </li>
+
+                                                                <li style="line-height: inherit; margin-top: 20px; margin-bottom: 0; margin-left: 0">02/08/2023 Repellendus aut magni laborum. 08:00 0
+                                                                </li>
+
+                                                                <li style="line-height: inherit; margin-top: 20px; margin-bottom: 0; margin-left: 0">02/15/2023 Esse et et. 08:00 1
+                                                                    <a href="https://skydivect.com/experienced-jumpers/event-registration?id=9" style="line-height: inherit" target="_blank" rel="noreferrer">Register</a>
+                                                                </li>
+
+                                                                <li style="line-height: inherit; margin-top: 20px; margin-bottom: 0; margin-left: 0">02/02/2023 Voluptas mollitia quia. 08:00 0
+                                                                </li>
+
+                                                                <li style="line-height: inherit; margin-top: 20px; margin-bottom: 0; margin-left: 0">02/16/2023 Nihil sint eveniet. 08:00 1
+                                                                    <a href="https://skydivect.com/experienced-jumpers/event-registration?id=12" style="line-height: inherit" target="_blank" rel="noreferrer">Register</a>
+                                                                </li>
+
+                                                                <li style="line-height: inherit; margin-top: 20px; margin-bottom: 0; margin-left: 0">03/01/2023 Distinctio vero provident amet. 08:00 0
+                                                                </li>
+
+                                                                <li style="line-height: inherit; margin-top: 20px; margin-bottom: 0; margin-left: 0">02/04/2023 Est saepe omnis consequatur. 08:00 0
+                                                                </li>
+
+                                                                <li style="line-height: inherit; margin-top: 20px; margin-bottom: 0; margin-left: 0">02/25/2023 Alias in qui ea voluptate quis. 08:00 0
+                                                                </li>
+
+                                                                <li style="line-height: inherit; margin-top: 20px; margin-bottom: 0; margin-left: 0">02/17/2023 Quia eum amet quos. 08:00 1
+                                                                    <a href="https://skydivect.com/experienced-jumpers/event-registration?id=17" style="line-height: inherit" target="_blank" rel="noreferrer">Register</a>
+                                                                </li>
+
+                                                                <li style="line-height: inherit; margin-top: 20px; margin-bottom: 0; margin-left: 0">02/24/2023 Repudiandae natus voluptates molestiae facere. 08:00 1
+                                                                    <a href="https://skydivect.com/experienced-jumpers/event-registration?id=18" style="line-height: inherit" target="_blank" rel="noreferrer">Register</a>
+                                                                </li>
+
+                                                                <li style="line-height: inherit; margin-top: 20px; margin-bottom: 0; margin-left: 0">02/27/2023 Expedita aut ipsum. 08:00 1
+                                                                    <a href="https://skydivect.com/experienced-jumpers/event-registration?id=19" style="line-height: inherit" target="_blank" rel="noreferrer">Register</a>
+                                                                </li>
+
+                                                                <li style="line-height: inherit; margin-top: 20px; margin-bottom: 0; margin-left: 0">02/04/2023 Iusto ullam facilis rerum in. 08:00 0
+                                                                </li>
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <div style="line-height: inherit; margin-left: 20px; margin-right: 20px">
+                                                        <div style="mso-line-height-rule: exactly; line-height: 10px; font-size: 1px">&nbsp;</div>
+                                                    </div>
+
+                                                    <div style="line-height: inherit; margin-left: 20px; margin-right: 20px">
+                                                        <div class="v1btn v1btn--flat v1btn--large" style="line-height: inherit; margin-bottom: 20px; text-align: center">
+                                                            <a style="border-radius: 4px; display: inline-block; font-size: 14px; font-weight: bold; line-height: 24px; padding: 12px 24px; text-align: center; text-decoration: none !important; transition: opacity 0.1s ease-in; color: #ffffff !important; background-color: #4c5b6b; font-family: Roboto, Tahoma, sans-serif" href="https://skydivect.com/experienced-jumpers/events-calendar" target="_blank" rel="noreferrer">Event Calendar</a>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div style="line-height: inherit; margin-left: 20px; margin-right: 20px; margin-bottom: 12px">
+                                                        <div style="mso-line-height-rule: exactly; line-height: 5px; font-size: 1px">&nbsp;</div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div style="mso-line-height-rule: exactly; line-height: 20px; font-size: 20px">&nbsp;</div>
+
+                                    </div>
+                                    <div style="line-height: inherit">
+                                        <div style="line-height: 4px; font-size: 4px" id="v1footer-top-spacing">&nbsp;</div>
+                                        <div class="v1layout v1email-flexible-footer v1email-footer" style="line-height: inherit; transition: width 0.25s ease-in-out, max-width 0.25s ease-in-out; -fallback-width: 95% !important; margin: 0 auto; max-width: 600px; min-width: 320px; width: calc(28000% - 167400px); overflow-wrap: break-word; word-wrap: break-word; word-break: break-word" id="v1footer-content">
+                                            <div class="v1layout__inner v1center-aligned-footer" style="line-height: inherit; border-collapse: collapse; display: table; width: 100%">
+
+
+                                                <div class="v1column" style="transition: width 0.25s ease-in-out, max-width 0.25s ease-in-out; text-align: center; font-size: 12px; line-height: 19px; color: #e8e8e8; font-family: Avenir,sans-serif; display: none" align="center">
+                                                    <div class="v1footer-logo v1emb-logo-margin-box" style="font-size: 26px; line-height: 32px; margin-top: 10px; margin-bottom: 20px; color: #7b663d; font-family: Roboto,Tahoma,sans-serif" align="center">
+                                                        <div align="center" style="line-height: inherit"></div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="v1column" style="transition: width 0.25s ease-in-out, max-width 0.25s ease-in-out; text-align: center; font-size: 12px; line-height: 19px; color: #e8e8e8; font-family: Avenir,sans-serif; display: none" align="center">
+
+                                                </div>
+
+
+                                                <table style="line-height: inherit; display: table !important; border-collapse: collapse; table-layout: fixed; width: 100%" cellpadding="0" cellspacing="0"><tbody style="line-height: inherit"><tr style="line-height: inherit"><td style="line-height: inherit"><div class="v1column v1js-footer-additional-info" style="transition: width 0.25s ease-in-out, max-width 0.25s ease-in-out; text-align: center; font-size: 12px; line-height: 19px; color: #e8e8e8; font-family: Avenir,sans-serif; display: inline; width: 100%" align="center">
+                                                    <div style="line-height: inherit; margin-left: 0; margin-right: 0; margin-top: 10px; margin-bottom: 10px">
+
+
+
+                                                        <div class="v1email-footer__additional-info" style="margin-left: 20px; margin-right: 20px; font-size: 12px; line-height: 19px; margin-bottom: 15px">
+                                                            <a style="line-height: inherit; text-decoration: underline; transition: opacity 0.1s ease-in; color: #e8e8e8" href="https://szabo.createsend1.com/t/y-u-nkkhdky-l-y/" target="_blank" rel="noreferrer"></a>
+                                                        </div>
+
+                                                    </div>
+                                                </div></td></tr></tbody></table>
+
+                                            </div>
+                                        </div>
+                                        <div style="line-height: 40px; font-size: 40px" id="v1footer-bottom-spacing">&nbsp;</div>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <style type="text/css">@media (max-width:619px){#message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1left-aligned-footer .v1column,#message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1center-aligned-footer,#message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1right-aligned-footer .v1column{ max-width: 100% !important; text-align: center !important; width: 100% !important; }#message-htmlpart1 div.rcmBody .v1flexible-footer-logo{ margin-left: 0px !important; margin-right: 0px !important; }#message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1left-aligned-footer .v1flexible-footer__share-button__container,#message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1center-aligned-footer .v1flexible-footer__share-button__container,#message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1right-aligned-footer .v1flexible-footer__share-button__container{ display: inline-block; margin-left: 5px !important; margin-right: 5px !important; }#message-htmlpart1 div.rcmBody .v1email-flexible-footer__additionalinfo--center{ text-align: center !important; }#message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1left-aligned-footer table,#message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1center-aligned-footer table,#message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1right-aligned-footer
+                        #message-htmlpart1 div.rcmBody table{ display: table !important; width: 100% !important; }#message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1footer__share-button,#message-htmlpart1 div.rcmBody .v1email-flexible-footer .v1email-footer__additional-info{ margin-left: 20px; margin-right: 20px; }}</style>
+                        <!-- script not allowed -->
+                        <!-- script not allowed -->
+                        <!-- script not allowed --><div id="v1ascrail2000" class="v1nicescroll-rails" style="line-height: inherit; width: 12px; z-index: auto; cursor: default; position: absolute; top: 0px; height: 100%; right: 0px; display: block; opacity: 0.25"><div style="line-height: inherit; position: relative; top: 0px; float: right; width: 8px; height: 159px; background-color: rgb(0, 0, 0); border: 2px solid transparent; background-clip: padding-box; border-radius: 10px"></div></div>
+
+                        <img width="1px" height="1px" src="http://email.mg.skydivect.com/o/eJxUyTGugzAMBuDTkBHZwU5-DzkMdsJ7qEJIUFVqT9-589dbztqd02hcqjKIhNJ_C7aK6qKUCwcBlc3XJbY1BAWa9iZm3kE14Iua-baUrCoYCOsYOgkdf_P9ePf9NeI5x3mkq133Z_VzEvqBbwAAAP__eRUnWA"></div>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- popup menus -->
+<div id="attachmentmenu" class="popupmenu">
+    <h3 id="aria-label-attachmentmenu" class="voice">Attachment options</h3>
+    <ul class="menu listing" role="menu" aria-labelledby="aria-label-attachmentmenu">
+        <li role="menuitem"><a id="attachmenuopen" class="extwin disabled" role="button" tabindex="-1" aria-disabled="true" href="#" onclick="return rcmail.command('open-attachment','',this,event)">Open</a></li>
+        <li role="menuitem"><a id="attachmenudownload" class="download active" role="button" tabindex="0" aria-disabled="false" href="#" onclick="return rcmail.command('download-attachment','',this,event)">Download</a></li>
+
+    </ul>
+</div>
+
+<div id="mailto-menu" class="popupmenu">
+    <h3 id="aria-label-mailtomenu" class="voice">Email address options</h3>
+    <ul class="menu listing" role="menu" aria-labelledby="aria-label-mailtomenu">
+        <li role="menuitem"><a class="addressbook" id="rcmbtnfrm106" role="button" tabindex="-1" aria-disabled="true" href="#">Add to address book</a></li>
+        <li role="menuitem"><a class="compose" id="rcmbtnfrm107" role="button" tabindex="-1" aria-disabled="true" href="#">Compose mail to</a></li>
+
+    </ul>
+</div>
+
+
+
+<div id="messagestack"></div>
+<script>
+    $(function() {
+        rcmail.init();
+    });
+</script>
+
+
+
+<script src="skins/elastic/deps/bootstrap.bundle.min.js?s=1665002674"></script>
+<script src="skins/elastic/ui.min.js?s=1665002674"></script>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
