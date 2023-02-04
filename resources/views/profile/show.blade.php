@@ -2,6 +2,12 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Profile') }}
+            <x-breadcrunb.breadcrumb label="Users" crumbs="2">
+                <x-slot:urlhome>/</x-slot:urlhome>
+                <x-slot:homelabel>Home</x-slot:homelabel>
+                <x-slot:url2>{{route('users-list')}}</x-slot:url2>
+                <x-slot:label2>Users</x-slot:label2>
+            </x-breadcrunb.breadcrumb>
         </h2>
     </x-slot>
 
