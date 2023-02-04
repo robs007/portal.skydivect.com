@@ -57,4 +57,6 @@ Route::middleware([
     Route::get('/participants/{event}', App\Http\Livewire\ParticipantList::class)->name('participant-list');
     Route::get('/participant/{participant}/edit', App\Http\Livewire\ParticipantEdit::class)->name('participant-edit');
     Route::get('/participant/{event}/create', App\Http\Livewire\ParticipantAdd::class)->name('participant-add');
+
+    Route::get('/users', App\Http\Livewire\UserList::class)->name('users-list');
 });

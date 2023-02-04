@@ -27,6 +27,7 @@ class User extends Authenticatable Implements MustVerifyEmail
         'name',
         'email',
         'password',
+        'is_admin'
     ];
 
     /**
@@ -58,4 +59,6 @@ class User extends Authenticatable Implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+
+
 }

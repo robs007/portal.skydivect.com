@@ -81,6 +81,11 @@
                 @endif
             @endif
         </div>
+        <div class="col-span-6 sm:col-span-4"><x-j
+            <x-jet-label for="is_admin" value="{{__('Admin')}}" />
+            <x-jet-checkbox id="is_admin" name="is_admin" class="mt-1 block" wire:model.defer="state.is_admin" />
+        </div>
+
     </x-slot>
 
     <x-slot name="actions">

@@ -28,7 +28,7 @@ class SendEventEmail extends Command
      */
     public function handle()
     {
-        Mail::to(['rszabo@crowleyauto.net'])->send(new \App\Mail\SendEvents());
+        Mail::to(['cpimembers@mg.skydivect.com'])->send(new \App\Mail\SendEvents());
 
         return Command::SUCCESS;
     }

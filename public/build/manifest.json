@@ -5,12 +5,12 @@
     "isEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app.850f945c.css",
+    "file": "assets/app.a85e6a8d.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/css/mail.css": {
-    "file": "assets/mail.850f945c.css",
+    "file": "assets/mail.a85e6a8d.css",
     "src": "resources/css/mail.css",
     "isEntry": true
   }

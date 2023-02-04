@@ -8,6 +8,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use WireUi\Traits\Actions;
 
+
 class EventList extends Component
 {
     use WithPagination;
@@ -40,6 +41,7 @@ class EventList extends Component
         }else
         {
             $event->delete();
+
 
             $this->dispatchBrowserEvent('notify', 'Event '.$event->title.' has been Deleted');
         }
