@@ -626,47 +626,6 @@
                 <div style="mso-line-height-rule: exactly;line-height: 20px;font-size: 20px;">&nbsp;</div>
 
             </div>
-{{--            <div role="contentinfo"><div style="line-height:4px;font-size:4px;" id="footer-top-spacing">&nbsp;</div>--}}
-{{--                <div class="layout email-flexible-footer email-footer" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;" id="footer-content">--}}
-{{--                    <div class="layout__inner center-aligned-footer" style="border-collapse: collapse;display: table;width: 100%;">--}}
-{{--                        <!--[if (mso)|(IE)]><table style="width: 600px;" align="center" cellpadding="0" cellspacing="0" role="presentation"><![endif]-->--}}
-{{--                        <!--[if (mso)|(IE)]><tr class="layout-email-footer"><![endif]-->--}}
-{{--                        <div class="column" style="text-align: center;font-size: 12px;line-height: 19px;color: #e8e8e8;font-family: Avenir,sans-serif;display: none;" align="center">--}}
-{{--                            <div class="footer-logo emb-logo-margin-box" style="font-size: 26px;line-height: 32px;Margin-top: 10px;Margin-bottom: 20px;color: #7b663d;font-family: Roboto,Tahoma,sans-serif;" align="center">--}}
-{{--                                <div emb-flexible-footer-logo="" align="center"></div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <!--[if (mso)|(IE)]></tr><![endif]-->--}}
-{{--                        <!--[if (mso)|(IE)]><tr class="layout-email-footer"><![endif]-->--}}
-{{--                        <div class="column" style="text-align: center;font-size: 12px;line-height: 19px;color: #e8e8e8;font-family: Avenir,sans-serif;display: none;" align="center">--}}
-
-{{--                        </div>--}}
-{{--                        <!--[if (mso)|(IE)]></tr><![endif]-->--}}
-{{--                        <!--[if (mso)|(IE)]><tr class="layout-email-footer"><![endif]-->--}}
-{{--                        <table style="border-collapse: collapse;table-layout: fixed;width: 100%;" cellpadding="0" cellspacing="0">--}}
-{{--                            <tbody>--}}
-{{--                            <tr>--}}
-{{--                                <td>--}}
-{{--                                    <div class="column js-footer-additional-info" style="text-align: center;font-size: 12px;line-height: 19px;color: #e8e8e8;font-family: Avenir,sans-serif;display: inline;width: 100%;" align="center">--}}
-{{--                                        <div style="margin-left: 0;margin-right: 0;Margin-top: 10px;Margin-bottom: 10px;">--}}
-
-
-
-{{--                                            <div class="email-footer__additional-info" style="font-size: 12px;line-height: 19px;margin-bottom: 15px;">--}}
-{{--                                                <a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #e8e8e8;" href="https://szabo.createsend1.com/t/y-u-nkkhdky-l-y/" target="_blank"></a>--}}
-{{--                                            </div>--}}
-{{--                                            <!--[if mso]>&nbsp;<![endif]-->--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </td>--}}
-{{--                            </tr>--}}
-{{--                            </tbody>--}}
-{{--                        </table>--}}
-
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div style="line-height:40px;font-size:40px;" id="footer-bottom-spacing">&nbsp;</div>--}}
-{{--            </div>--}}
 
         </td>
     </tr>
@@ -676,9 +635,6 @@
     @media (max-width:619px){.email-flexible-footer .left-aligned-footer .column,.email-flexible-footer .center-aligned-footer,.email-flexible-footer .right-aligned-footer .column{max-width:100% !important;text-align:center !important;width:100% !important}.flexible-footer-logo{margin-left:0px !important;margin-right:0px !important}.email-flexible-footer .left-aligned-footer .flexible-footer__share-button__container,.email-flexible-footer .center-aligned-footer .flexible-footer__share-button__container,.email-flexible-footer .right-aligned-footer .flexible-footer__share-button__container{display:inline-block;margin-left:5px !important;margin-right:5px !important}.email-flexible-footer__additionalinfo--center{text-align:center !important}.email-flexible-footer .left-aligned-footer table,.email-flexible-footer .center-aligned-footer table,.email-flexible-footer .right-aligned-footer
     table{display:table !important;width:100% !important}.email-flexible-footer .footer__share-button,.email-flexible-footer .email-footer__additional-info{margin-left:20px;margin-right:20px}}
 </style>
-{{--<script type="text/javascript" src="https://js.createsend1.com/js/compiled/app/global/polyfill/polyfill.min.js?h=8D4972A220210825125555"></script>--}}
-{{--<script type="text/javascript" src="https://js.createsend1.com/js/tsb.min.js?h=354E27EC20210825125555"></script>--}}
-{{--<script type="text/javascript" src="https://js.createsend1.com/js/compiled/app/content/emailPreview-iframe.min.js?h=8AF34A3A20210825125555" data-model="{&quot;Scrollbars&quot;:true}"></script><div id="ascrail2000" class="nicescroll-rails" style="width: 12px; z-index: auto; cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; display: block; opacity: 0.25;"><div style="position: relative; top: 0px; float: right; width: 8px; height: 159px; background-color: rgb(0, 0, 0); border: 2px solid transparent; background-clip: padding-box; border-radius: 10px;"></div></div>--}}
 
 </body>
 </html>

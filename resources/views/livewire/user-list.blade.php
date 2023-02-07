@@ -14,7 +14,7 @@
                             </x-breadcrunb.breadcrumb>
                         </div>
                         <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none sm:mr-3">
-                            <x-button href="{{route('participant-add', $event->id ?? '')}}" label="Add" info right-icon="plus" rounded />
+                            <x-button href="{{route('user-create')}}" label="Add User"  info right-icon="plus" rounded />
 
                         </div>
                     </div>

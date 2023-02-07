@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
+use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController;
 
 
 
@@ -59,4 +60,5 @@ Route::middleware([
     Route::get('/participant/{event}/create', App\Http\Livewire\ParticipantAdd::class)->name('participant-add');
 
     Route::get('/users', App\Http\Livewire\UserList::class)->name('users-list');
+    Route::get('/user/create',App\Http\Livewire\UserCreate::class)->name('user-create');
 });

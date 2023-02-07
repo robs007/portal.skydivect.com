@@ -109,7 +109,11 @@
                             <x-jet-dropdown-link href="{{ route('profile.show') }}">
                                 {{ __('Profile') }}
                             </x-jet-dropdown-link>
-
+                            @if(Auth::user()->isAdmin())
+                           <x-jet-dropdown-link href="{{ route('users-list') }}">
+                                {{ __('Users') }}
+                            </x-jet-dropdown-link>
+                            @endif
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
                                     {{ __('API Tokens') }}
