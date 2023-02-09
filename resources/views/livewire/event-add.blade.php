@@ -10,7 +10,7 @@
                     <x-text-area wire:model.defer="event.detail" id="detail" :error="$errors->first('event.detail')" />
                 </x-group>
                 <x-group for="start_date" label="Start Date" class="col-span-4" :error="$errors->first('event.start_date')">
-                    <x-date wire:model="event.start_date" id="start_date" :error="$errors->first('event.start_date')" field="event.start_date" />
+                    <x-date wire:model.defer="event.start_date"  id="start_date" :error="$errors->first('event.start_date')" field="event.start_date" />
                 </x-group>
                 <x-group for="start_time" label="Start Time" class="col-span-4" :error="$errors->first('event.start_time')">
 {{--                    <x-selectbox wire:model="event.start_time" id="start_time" :error="$errors->first('event.start_time')" >--}}
@@ -68,6 +68,6 @@
             </div>
 
         </form>
-
+@json($event)
     </x-layout.subpage>
 </div>
